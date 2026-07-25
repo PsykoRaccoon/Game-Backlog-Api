@@ -1,0 +1,52 @@
+@page
+@model GameBacklogApi.Pages.IndexModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Game Backlog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header class="board-header">
+        <h1>Game Backlog</h1>
+        <p class="subtitle">Track what you're playing, what's next, and what's done.</p>
+    </header>
+
+    <form id="add-game-form" class="add-game-form">
+        <input type="text" id="title" placeholder="Game title" required />
+        <input type="text" id="platform" placeholder="Platform" required />
+        <select id="rating">
+            <option value="0">Not rated</option>
+            <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+            <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+            <option value="7">7</option><option value="8">8</option><option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        <button type="submit">Add game</button>
+    </form>
+
+    <main class="board" id="board">
+        <section class="column" data-status="Backlog">
+            <h2>Backlog <span class="count" id="count-backlog">0</span></h2>
+            <div class="cards" id="cards-backlog"></div>
+        </section>
+        <section class="column" data-status="Playing">
+            <h2>Playing <span class="count" id="count-playing">0</span></h2>
+            <div class="cards" id="cards-playing"></div>
+        </section>
+        <section class="column" data-status="Completed">
+            <h2>Completed <span class="count" id="count-completed">0</span></h2>
+            <div class="cards" id="cards-completed"></div>
+        </section>
+    </main>
+
+    <script src="~/js/site.js"></script>
+</body>
+</html>
