@@ -2,8 +2,12 @@
 
 A REST API built with ASP.NET Core and Entity Framework Core, backed by SQL Server, to track a personal game backlog (games to play, in progress, and completed).
 
+## Screenshot
+
+![Game Backlog board](screenshots/Board.png)
+
 ## Tech stack
-- C# / ASP.NET Core (.NET 10)
+- C# / ASP.NET Core (.NET 10) 
 - Entity Framework Core
 - SQL Server (via Docker / Azure SQL Edge on Apple Silicon)
 
