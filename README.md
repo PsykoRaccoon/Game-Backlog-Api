@@ -1,6 +1,6 @@
 # Game Backlog API
 
-A REST API built with ASP.NET Core and Entity Framework Core, backed by SQL Server, to track a personal game backlog (games to play, in progress, and completed).
+A REST API built with ASP.NET Core and Entity Framework Core, backed by PostgreSQL, to track a personal game backlog (games to play, in progress, and completed).
 
 ## Screenshot
 
@@ -9,7 +9,7 @@ A REST API built with ASP.NET Core and Entity Framework Core, backed by SQL Serv
 ## Tech stack
 - C# / ASP.NET Core (.NET 10) 
 - Entity Framework Core
-- SQL Server (via Docker / Azure SQL Edge on Apple Silicon)
+- PostgreSQL (via Docker)
 
 ## Features
 - Full CRUD via REST endpoints (`GET`, `POST`, `PUT`, `DELETE`)
@@ -27,9 +27,9 @@ A REST API built with ASP.NET Core and Entity Framework Core, backed by SQL Serv
 
 ## Running locally
 
-1. Start SQL Server in Docker:
+1. Start PostgreSQL in Docker:
 
-docker run -e ACCEPT_EULA=1 -e MSSQL_SA_PASSWORD='YourPassword123!' -p 1433:1433 --name sql-edge -d mcr.microsoft.com/azure-sql-edge
+docker run -e POSTGRES_PASSWORD='YourPassword123!' -e POSTGRES_DB=GameBacklogDb -p 5432:5432 --name postgres-gamebacklog -d postgres
 
 2. Copy `appsettings.Example.json` to `appsettings.json` and set your own password.
 3. Apply migrations:
